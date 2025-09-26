@@ -1,0 +1,34 @@
+<template>
+  <lightning-card
+    class="MyCard"
+    title="Jest Test Component"
+    icon-name="custom:custom14"
+  >
+    <lightning-button
+      class="ShowContentButton"
+      label="Show Content"
+      slot="actions"
+      onclick={handleShowContent}
+    ></lightning-button>
+
+    <div class="slds-var-p-around_medium">
+      <!-- Content Section -->
+      <template lwc:if={showContent}>
+        <p class="content">{content}</p>
+      </template>
+
+      <!-- Account List Section -->
+      <template lwc:if={accounts}>
+        <h3 class="slds-text-heading_small slds-var-p-vertical_medium">
+          Account List:
+        </h3>
+        <template for:each={accounts} for:item="account">
+          <p class="account" key={account.Id}>{account.Name}</p>
+        </template>
+      </template>
+      <template lwc:if={error}>
+        <p class="error">Error loading accounts</p>
+      </template>
+    </div>
+  </lightning-card>
+</template>
