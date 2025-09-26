@@ -1,6 +1,6 @@
 # Salesforce Jest Testing Project
 
-A comprehensive Salesforce DX project demonstrating Lightning Web Component (LWC) testing using Jest framework. This project showcases various testing patterns, mock strategies, and best practices for testing LWC components with Apex integration.
+A Salesforce DX project demonstrating Lightning Web Component (LWC) testing using Jest framework. This project showcases various testing patterns and mock strategies for testing LWC components with Apex integration.
 
 ## Project Overview
 
@@ -9,7 +9,6 @@ This project contains a sample Lightning Web Component (`jestTesting`) that demo
 - Interactive UI elements with event handling
 - Apex method integration using `@wire` decorators
 - Account data display with error handling
-- Comprehensive Jest test coverage
 
 ## Key Components
 
@@ -27,22 +26,12 @@ This project contains a sample Lightning Web Component (`jestTesting`) that demo
 
 - **Location**: `force-app/main/default/classes/AccountListController.cls`
 - **Purpose**: Provides cacheable account data to LWC components
-- **Features**:
-  - Field-Level Security (FLS) enforcement
-  - Configurable record limit
-  - SOQL query optimization
 
 ## Jest Testing Framework
 
-### Test Configuration
-
-- **Jest Config**: `jest.config.js` - Extends Salesforce's LWC Jest configuration
-- **Setup File**: `jest-sa11y-setup.js` - Accessibility testing setup
-- **Package Scripts**: Multiple test commands for different scenarios
-
 ### Test Files Structure
 
-The project includes comprehensive test examples in `force-app/main/default/lwc/jestTesting/__tests__/`:
+The project includes test examples in `force-app/main/default/lwc/jestTesting/__tests__/`:
 
 #### 1. `jestTesting.test.js` - Component Integration Tests
 
@@ -65,7 +54,7 @@ The project includes comprehensive test examples in `force-app/main/default/lwc/
 - **Global Hooks**: `beforeAll()`, `afterAll()` for file-level setup
 - **Suite Hooks**: Per-describe block setup and teardown
 - **Test Hooks**: `beforeEach()`, `afterEach()` for individual tests
-- **Execution Order**: Demonstrates proper test isolation
+- **Execution Order**: Demonstrates proper hook execution sequence
 
 ### Mock Data Files
 
@@ -87,11 +76,6 @@ The project includes comprehensive test examples in `force-app/main/default/lwc/
 - Data emission simulation
 - Error scenario testing
 - Promise resolution handling
-
-### 3. Accessibility Testing
-
-- Integration with `@sa11y/jest` for accessibility validation
-- Automated a11y checks in component tests
 
 ### 4. Test Organization
 
@@ -142,15 +126,16 @@ Located in `scripts/` directory:
    npm install
    ```
 
-2. **Run Tests**:
+2. **Run Create Scratch Org script**:
+
+   ```bash
+   ./scripts/create-scratch-org.sh
+   ```
+
+3. **Run Tests**:
 
    ```bash
    npm run test
-   ```
-
-3. **Deploy to Org**:
-   ```bash
-   sf project deploy start -w 120 -g -c
    ```
 
 ## Best Practices Demonstrated
@@ -159,7 +144,6 @@ Located in `scripts/` directory:
 - **Mock Strategy**: Effective mocking of Apex methods and external dependencies
 - **Data-Driven Testing**: Using JSON fixtures for consistent test data
 - **Error Handling**: Testing both success and failure scenarios
-- **Accessibility**: Automated accessibility testing integration
 
 ## Resources
 
